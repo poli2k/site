@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', Helvetica, sans-serif;
+}
+
+body {
+    background-color: #0b0b0b;
+    color: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Шапка сайта */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.nav a:hover {
+    opacity: 0.6;
+}
+
+/* Главный экран (Hero) */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 100px 20px 40px 20px; /* Добавлен верхний паддинг, чтобы текст не заезжал под шапку */
+}
+
+.hero-top {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Распределяет дату и текст по краям */
+    padding: 0 50px;
+    font-size: 12px;
+    color: #ffffff; /* ИСПРАВЛЕНО: Был #000000 (черный текст на черном фоне) */
+}
+
+.hero-subtext {
+    max-width: 260px;
+    text-align: right;
+    line-height: 1.4;
+}
+
+/* Центрирование и адаптивность картинки Hero */
+.hero-title-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+/* Декоративные размытые круги */
+.blur-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.circle-1 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #4f46e5, transparent);
+    top: 15%;
+    left: 15%;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #ec4899, transparent);
+    bottom: 20%;
+    right: 20%;
+}
+
+/* Секция About */
+.about {
+    padding: 120px 50px;
+    border-top: 1px solid #1f1f1f;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+}
+
+.about-image-placeholder {
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #141414, #0b0b0b);
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.about-image-placeholder img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-description {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 60px;
+    color: #e5e7eb;
+    letter-spacing: -0.5px;
+}
+
+/* Сетка преимуществ */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.feature-card {
+    border-top: 1px solid #262626;
+    padding-top: 25px;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.barcode {
+    font-family: monospace;
+    letter-spacing: 3px;
+    color: #4b5563;
+    font-size: 11px;
+}
+
+/* Секция What We Provide */
+.provide {
+    padding: 120px 50px;
+    text-align: center;
+    border-top: 1px solid #1f1f1f;
+}
+
+.provide-title {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.provide-subtitle {
+    max-width: 750px;
+    margin: 0 auto 60px auto;
+    font-size: 1rem;
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+.interactive-circle-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interactive-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: conic-gradient(from 180deg at 50% 50%, #00d2ff 0deg, #00fff0 115deg, #3b82f6 245deg, #00d2ff 360deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 60px rgba(0, 210, 255, 0.25);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.interactive-circle:hover {
+    transform: rotate(90deg);
+}
+
+.circle-center-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #0b0b0b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #0b0b0b;
+    transform: rotate(-90deg);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ИСПРАВЛЕНО: Изменено значение, чтобы внутренний круг компенсировал вращение внешнего */
+.interactive-circle:hover .circle-center-img {
+    transform: rotate(-180deg);
+}
+
+.inner-graphic {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffffff 10%, #1f2937 80%);
+}
+
+/* Секция Featured Portfolio */
+.portfolio {
+    padding: 120px 50px;
+    border-top: 1px solid #1f1f1f;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.portfolio-left img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-intro {
+    font-size: 1rem;
+    color: #9ca3af;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #1f1f1f;
+    padding-bottom: 30px;
+}
+
+.project-list {
+    list-style: none;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    padding: 28px 0;
+    border-bottom: 1px solid #1f1f1f;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.project-num {
+    font-size: 13px;
+    color: #4b5563;
+    margin-right: 40px;
+    font-family: monospace;
+    transition: color 0.3s ease;
+}
+
+.project-name {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    flex-grow: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-barcode {
+    font-family: monospace;
+    color: #374151;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+/* Ховер эффекты списка */
+.project-item:hover {
+    border-bottom-color: #ffffff;
+}
+
+.project-item:hover .project-name {
+    color: #00fff0;
+    transform: translateX(12px);
+}
+
+.project-item:hover .project-num {
+    color: #00fff0;
+}
+
+/* Секция Отзывы */
+.testimonials {
+    padding: 120px 50px;
+    border-top: 1px solid #1f1f1f;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonials-title {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.testimonials-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px auto;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: #0f0f0f;
+    border: 1px solid #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 260px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: #2e2e2e;
+    transform: translateY(-4px);
+}
+
+.testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d1d5db;
+}
+
+.testimonial-author {
+    margin-top: 35px;
+}
+
+.author-name {
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+    color: #ffffff;
+}
+
+.author-role {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 4px;
+    display: block;
+}
+
+/* МЕДИАЗАПРОСЫ (ИСПРАВЛЕНО И ЗАКРЫТО) */
+@media (max-width: 1024px) {
+    .about-container, .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    .section-title, .provide-title, .testimonials-title {
+        font-size: 2.8rem;
+    }
+    .header {
+        padding: 20px;
+    }
+    .hero-top {
+        padding: 0 20px;
+    }
+    .about, .provide, .portfolio, .testimonials {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .nav {
+        display: none; /* Скрывает десктопное меню на мобильных */
+    }
+    .project-name {
+        font-size: 1.5rem;
+    }
+}
